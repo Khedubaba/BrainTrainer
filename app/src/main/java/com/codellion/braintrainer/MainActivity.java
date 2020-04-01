@@ -96,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
                 resultText.setText(R.string.done);
                 resultText.setTextColor(ContextCompat.getColor(getApplicationContext(), android.R.color.tab_indicator_text));
                 playAgainBtn.setVisibility(View.VISIBLE);
+                button0.setEnabled(false);
+                button1.setEnabled(false);
+                button2.setEnabled(false);
+                button3.setEnabled(false);
             }
         }.start();
     }
@@ -106,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
         playAgainBtn.setVisibility(View.INVISIBLE);
         scoreText.setText(getText(R.string.nullscore));
         resultText.setText("");
+        button0.setEnabled(true);
+        button1.setEnabled(true);
+        button2.setEnabled(true);
+        button3.setEnabled(true);
     }
 
 
