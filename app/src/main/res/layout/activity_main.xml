@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/goButtonCons"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#88DA03"
+        android:onClick="go"
+        android:padding="40dp"
+        android:text="@string/go"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/gameLayout"
+        app:layout_constraintEnd_toEndOf="@+id/gameLayout"
+        app:layout_constraintStart_toStartOf="@+id/gameLayout"
+        app:layout_constraintTop_toTopOf="@+id/gameLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#BCB3B337"
+            android:onClick="playAgain"
+            android:text="@string/play_again"
+            android:textColor="#0A190C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
+            app:layout_constraintVertical_bias="0.817" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
+            app:layout_constraintVertical_bias="0.385" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.21"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.55"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+
+            app:columnCount="2"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:rowCount="2">
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#F44336"
+                android:gravity="fill"
+                android:onClick="chooseAnswer"
+                android:tag="0"
+                android:text="14"
+                android:textAlignment="center"
+                android:textSize="80sp"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#945BFA"
+                android:gravity="fill"
+                android:onClick="chooseAnswer"
+                android:tag="1"
+                android:text="14"
+                android:textAlignment="center"
+                android:textSize="80sp"
+                app:layout_column="1"
+                app:layout_row="0" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#03A9F4"
+                android:gravity="fill"
+                android:onClick="chooseAnswer"
+                android:tag="2"
+                android:text="14"
+                android:textAlignment="center"
+                android:textSize="80sp"
+                app:layout_column="0"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#28FFBB"
+                android:gravity="fill"
+                android:onClick="chooseAnswer"
+                android:tag="3"
+                android:text="14"
+                android:textAlignment="center"
+                android:textSize="80sp"
+                app:layout_column="1"
+                app:layout_row="1" />
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="#FFAC32"
+            android:padding="10dp"
+            android:text="30s"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/sumTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.219" />
+
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="#47CBFF"
+            android:padding="10dp"
+            android:text="@string/nullscore"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.86"
+            app:layout_constraintStart_toEndOf="@+id/sumTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.219" />
+
+        <TextView
+            android:id="@+id/sumTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="31 + 7"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.413"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.299" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
